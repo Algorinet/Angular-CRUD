@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--Directiva NG-APP: Llamamos al módulo "aplicación" en script.js-->
+<html ng-app="aplicacion">
+
+<head>
+    <meta charset="utf-8" />
+    <title> CRUD Angular </title>
+    <link type="text/css" href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="/stylesheets/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="/javascripts/angular.min.js"></script>
+    <script type="text/javascript" src="/javascripts/script.js"></script>
+
+</head>
+
+<body>
+
+
+    <!--Directiva NG-CONTROLLER: Llamamos al controlador Clientes en el módulo "aplicación"-->
+    <header class="App-header">
+        <img src="/images/logo.svg" href="#!" class="App-logo" alt="logo"></img>
+        <nav class="navbar navbar-expand-lg">
+            <a href="" class="navbar-brand links">Usuarios</a>
+            <a href="crear.html" class="navbar-brand links">Nuevo</a>
+        </nav>
+
+    </header>
+    <div class="container-fluid" ng-controller="Usuarios" ng-init="listarUsuarios()">
+
+
+
+
+        <div class="container-table">
+            <table class="table">
+                <thead class="tableHead">
+                    <tr>
+                        <th> Nombre </th>
+                        <th> Email </th>
+                        <th> Fecha </th>
+                        <th> Dirección </th>
+                        <th> Detalles </th>
+                        <th> Editar </th>
+                        <th> Eliminar </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in usuarios" class="listado">
+                        <td> {{item.name}} </td>
+                        <td> {{item.email}} </td>
+                        <td> {{item.birthDay | date:'MM/dd/yyyy'}} </td>
+                        <td> {{item.street}} </td>
+                        <td><button type="button" class="btn btn-info"><i class="material-icons"
+                                    ng-click="detalleUsuario(item._id)">description</i></button></td>
+                        <td><button type="button" class="btn btn-primary"><i class="material-icons"
+                                    ng-click="editarUsuario(item._id)">dashboard</i></button></td>
+                        <td><button type="button" class="btn btn-danger"><i class="material-icons"
+                                    ng-click="eliminarUsuario(item._id)">delete</i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container-form">
+            <form class="form">
+                <div class="row">
+                    <div class="span4">
+                        <label> Nombre </label>
+                        <input type="text" ng-model="name" />
+                    </div>
+                    <div class="span4">
+                        <label> Email </label>
+                        <input type="text" ng-model="email" />
+                    </div>
+                    <div class="span4">
+                        <label> Fecha </label>
+                        <input type="text" ng-model="birthDay" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span4">
+                        <label> Dirección </label>
+                        <input type="text" ng-model="street" />
+                    </div>
+                    <div class="span4">
+                        <label> Ciudad </label>
+                        <input type="text" ng-model="city" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span4">
+                        <input type="submit" value="Guardar" class="btn btn-success" ng-model="_id"
+                            ng-click="crearUsuario(req.user.id)" />
+                        <input type="submit" value="Actualizar" class="btn btn-success"
+                            ng-click="actualizarUsuario()" />
+                        <input type="button" value="Limpiar" class="btn btn-danger" ng-click="limpiarFormulario()" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="detalles.html">Añadir Usuario</a>
+    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+
+</body>
+
+</html>

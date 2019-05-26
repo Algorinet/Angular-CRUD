@@ -1,0 +1,117 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/* Container */
+.container-fluid {
+  background-color: whitesmoke;
+  display: flex;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 10vmin;
+  pointer-events: none;
+  color: white
+}
+
+.App-header {
+  background-color: #034244;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-logo {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.App-link {
+  color: whitesmoke;
+}
+.navbar-brand {
+  color: #8c9192;
+}
+.links {
+  border: 5px double whitesmoke;
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: whitesmoke;
+  width: 200px; 
+}
+.links:hover{
+  text-decoration: none;
+  border-radius: 10px;
+  color: rgb(218, 59, 59);
+
+}
+
+/* Table */
+
+.container-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding:10px;
+  background-color: #034244;
+  border:1px solid black;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+.tableHead {
+  background: #034244;
+  color: whitesmoke;
+}
+.tableDetalles {
+  display: flex;
+  flex-direction: column;
+  width: 20%
+}
+.table-tr {
+  width:90%;
+}
+.table {
+  background-color: whitesmoke
+}
+
+h4,h5 {
+  color: #034244;
+}
+.button {
+  color: whitesmoke;
+  font-size: 20px;
+  margin-bottom: 5px;
+  border: 1px solid whitesmoke;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  padding:10px;
+  background-color: #034244;
+  border:1px solid black;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+.form {
+  background: #034244;
+  color: whitesmoke;
+  text-align: center;
+}
+
+
+
